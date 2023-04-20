@@ -1,6 +1,6 @@
 ---
-title: "Sarah R Homework"
-author: "Nicholas Piccaro"
+title: ""
+author: ""
 date: "4/18/23"
 output: html_document
 ---
