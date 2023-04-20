@@ -1,0 +1,51 @@
+---
+title: "Sarah R Homework"
+author: "Nicholas Piccaro"
+date: "4/18/23"
+output: html_document
+---
+
+# Sarah Homework 1
+## Load Packages Here
+```{r}
+
+```
+
+##### Perform data preprocessing on the dataset, which includes handling missing values, removing unnecessary columns, and renaming columns if needed.
+```{r}
+
+```
+
+#### Conduct basic data exploration by calculating summary statistics (e.g., mean, median, standard deviation) for numeric variables and frequencies for categorical variables.
+```{r}
+
+```
+
+#### Use ggplot2 to create visualizations to explore the relationships between variables in the dataset. Include at least two different types of plots, such as scatter plots, bar charts, or box plots, and interpret the findings.
+```{r}
+
+```
+
+#### Conduct appropriate statistical tests to analyze the data. For example, you can perform hypothesis tests (e.g., t-tests, chi-squared tests) or correlation tests (e.g., Pearson's correlation) to investigate relationships between variables. Provide interpretations of the results.
+```{r}
+
+```
+
+#### Perform a regression analysis to model the relationship between variables in the dataset. Choose an appropriate regression model (e.g., linear regression, logistic regression) based on the data and interpret the results. Include relevant visualizations to support your analysis.
+```{r}
+
+```
+
+### Rubric
+#### The following rubric will be used to evaluate your assignment:
+
+Loading and examining dataset: 10 points
+Data preprocessing: 15 points
+Data exploration: 15 points
+Data visualization using ggplot2: 15 points
+Statistical tests: 15 points
+Regression analysis: 20 points
+Presentation and organization: 10 points
+Total: 100 points
+
+Note: Please make sure to include appropriate comments, explanations, and interpretations in your R-Markdown file to demonstrate your understanding of the concepts and results.
