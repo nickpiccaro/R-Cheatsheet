@@ -1,0 +1,917 @@
+---
+title: "Sarah R Cheat Sheet"
+author: "Nicholas Piccaro"
+date: "4/18/23"
+output:
+  html_document:
+    toc: true
+    theme: united
+  pdf_document:
+    toc: true
+    theme: united
+---
+## Needs to be added
+mean, median, sd
+
+# What is R
+
+R is an open-source programming language and environment for statistical computing and graphics. Widely used in data analysis, statistical modeling, and visualization, R offers a rich ecosystem of packages and has a large community of users and developers. Known for its flexibility, extensibility, and optimized syntax for data analysis, R is popular in academia, industry, and research for various applications such as data science, bioinformatics, finance, and social sciences.
+
+#### R is a programming langage for statistics that uses packages to create an easy and powerful framework
+
+# Different Data Types in R
+Data types are the foundation of most coding languages. 
+##Base R Data Types: 
+```{r}
+# Different data types in R
+x <- 5  # Numeric
+y <- "hello"  # Character
+z <- TRUE  # Logical
+a <- c(1, 2, 3)  # Vector
+b <- list(1, "two", TRUE)  # List
+c <- data.frame(x = 1:3, y = c("A", "B", "C"))  # Data frame
+
+# Print the data types
+cat("x| Numeric:", class(x), "\n")
+cat("y| Character:", class(y), "\n")
+cat("z| Logical:", class(z), "\n")
+cat("a| Vector:", class(a), "\n")
+cat("b| List:", class(b), "\n")
+cat("c| Data frame:", class(c), "\n")
+```
+
+## Numeric Type Operations
+What can we do with Numeric Data Types
+### Basic Operations
+```{r}
+var1<-11 #A comment is a # in a code block this code wont run you can use it for notes
+var2<-16
+#above we assigned two variables var1 and var2 both of these are type numeric
+```
+### addition
+```{r}
+addV1V2 <- var1 + var2 # here we assign a new variable addV1V2 to the addition of var1 and var2
+cat("var1+var2 = ", addV1V2, "\n") #we need to add ,"\n" so it prints on a newline
+```
+
+### subtraction
+```{r}
+
+subV1V2 <- var1 - var2 # here we assign a new variable subV1V2 to the subtration of var2 from var1
+cat("var1-var2 = ", subV1V2, "\n")
+```
+
+### multiplication
+```{r}
+mulV1V2 <- var1 * var2 # here we assign a new variable mulV1V2 to the product of var2 and var1
+cat("var1*var2 = ", mulV1V2, "\n")
+```
+### division
+```{r}
+divV1V2 <- var1 / var2 # here we assign a new variable divV1V2 to the division of var1 by var2
+cat("var1/var2 = ", divV1V2, "\n")
+```
+### Exponentiation
+```{r}
+base <- 2
+exponent <- 3
+result <- base^exponent
+print(result) # Output: 8
+```
+
+### Modulus
+```{r}
+dividend <- 10
+divisor <- 3
+remainder <- dividend %% divisor
+print(remainder) # Output: 1
+```
+
+### Comparison
+```{r}
+a <- 5
+b <- 10
+less_than <- a < b
+print(less_than) # Output: TRUE
+
+greater_than_equal_to <- a >= b
+print(greater_than_equal_to) # Output: FALSE
+
+equality <- a == b
+print(equality) # Output: FALSE
+```
+
+### Mathematical Functions
+```{r}
+x <- 9
+square_root <- sqrt(x)
+print(square_root) # Output: 3
+
+absolute_value <- abs(-5)
+print(absolute_value) # Output: 5
+
+sine_value <- sin(pi/2)
+print(sine_value) # Output: 1
+
+natural_logarithm <- log(10)
+print(natural_logarithm) # Output: 2.302585
+```
+
+## Character Type Operations
+### Concatenation
+```{r}
+# Concatenation using paste()
+first_name <- "John"
+last_name <- "Doe"
+full_name <- paste(first_name, last_name)
+print(full_name) # Output: "John Doe"
+
+# Concatenation using c()
+greeting <- "Hello"
+audience <- "world"
+message <- c(greeting, audience)
+print(message) # Output: "Hello" "world"
+
+```
+
+### Substring Extraction
+```{r}
+# Substring Extraction using substr()
+text <- "Hello world"
+substring <- substr(text, 1, 5)
+print(substring) # Output: "Hello"
+
+# Substring Extraction using []
+substring <- text[7:11]
+print(substring) # Output: "world"
+```
+
+### String Manipulation
+```{r}
+# String Manipulation
+text <- "   R programming is fun!   "
+length <- nchar(text)
+print(length) # Output: 27
+
+upper_text <- toupper(text)
+print(upper_text) # Output: "   R PROGRAMMING IS FUN!   "
+
+lower_text <- tolower(text)
+print(lower_text) # Output: "   r programming is fun!   "
+
+trimmed_text <- trimws(text)
+print(trimmed_text) # Output: "R programming is fun!"
+```
+
+### Comparison Operators
+```{r}
+# Comparison
+text1 <- "apple"
+text2 <- "banana"
+less_than <- text1 < text2
+print(less_than) # Output: TRUE
+
+equality <- text1 == text2
+print(equality) # Output: FALSE
+```
+
+### Regular Expressions
+```{r}
+# Regular Expressions
+text <- "The quick brown fox jumps over the lazy dog"
+contains_fox <- grepl("fox", text)
+print(contains_fox) # Output: TRUE
+
+replaced_text <- gsub("fox", "cat", text)
+print(replaced_text) # Output: "The quick brown cat jumps over the lazy dog"
+```
+
+## Boolean or Logical Type Operations
+
+### Logical Operators
+
+```{r}
+# Logical Operators
+x <- TRUE
+y <- FALSE
+
+# AND
+result1 <- x & y
+print(result1) # Output: FALSE
+
+# OR
+result2 <- x | y
+print(result2) # Output: TRUE
+
+# NOT
+result3 <- !x
+print(result3) # Output: FALSE
+
+# Exclusive OR
+result4 <- xor(x, y)
+print(result4) # Output: TRUE
+```
+
+### Comparison Operators
+```{r}
+# Comparison Operators
+a <- TRUE
+b <- FALSE
+
+equality <- a == b
+print(equality) # Output: FALSE
+
+inequality <- a != b
+print(inequality) # Output: TRUE
+```
+
+### Conditional Statments
+```{r}
+# Conditional Statements
+age <- 25
+is_adult <- age >= 18
+
+if (is_adult) {
+  print("You are an adult.")
+} else {
+  print("You are not an adult.")
+}
+
+# Using ifelse()
+result <- ifelse(is_adult, "You are an adult.", "You are not an adult.")
+print(result) # Output: "You are an adult."
+```
+
+### Logical Functions
+```{r}
+# Logical Functions
+x <- TRUE
+y <- FALSE
+
+is_logical <- is.logical(x)
+print(is_logical) # Output: TRUE
+
+is_true <- isTRUE(x)
+print(is_true) # Output: TRUE
+
+any_true <- any(x, y)
+print(any_true) # Output: TRUE
+
+all_true <- all(x, y)
+print(all_true) # Output: FALSE
+```
+
+## Vector Operations
+
+### Vector Creation
+
+```{r}
+# Creating a numeric vector
+numeric_vector <- c(1.2, 2.3, 3.4, 4.5)
+cat("numeric vector: ", numeric_vector ,"\n")
+
+# Creating an integer vector
+integer_vector <- c(1L, 2L, 3L, 4L)
+cat("integer vector: ", integer_vector ,"\n")
+
+# Creating a character vector
+character_vector <- c("a", "b", "c", "d")
+cat("character vector: ", character_vector ,"\n")
+```
+
+### Generate Vector Data
+```{r}
+# Create a vector of even numbers from 2 to 20
+numbers2 <- seq(from = 2, to = 20, by = 2)
+print(numbers2)
+# Create a vector of random numbers between 0 and 1
+numbers3 <- runif(n = 10)
+print(numbers3)
+```
+
+
+### Vector Indexing
+```{r}
+# Accessing the first element of a vector
+first_element <- numeric_vector[1]
+cat("first element: ", first_element ,"\n")
+
+# Accessing a range of elements
+range_of_elements <- integer_vector[2:4]
+cat("range_of_elements: ", range_of_elements,"\n")
+
+# Accessing multiple elements using a vector of indices
+multiple_elements <- character_vector[c(2, 4)]
+cat("multiple_elements: ", multiple_elements ,"\n")
+```
+
+### Vector Arithmetic
+```{r}
+# Vector addition
+sum_vector <- numeric_vector + integer_vector
+cat("sum_vector: ", sum_vector ,"\n")
+
+# Vector subtraction
+diff_vector <- numeric_vector - integer_vector
+cat("diff_vector: ", diff_vector,"\n")
+
+# Vector multiplication
+prod_vector <- numeric_vector * integer_vector
+cat("prod vector: ", prod_vector,"\n")
+
+# Vector division
+quot_vector <- numeric_vector / integer_vector
+cat("quot_vector: ", quot_vector,"\n")
+```
+
+### Vector Functions
+```{r}
+# Calculating the length of a vector
+length_vector <- length(numeric_vector)
+cat("length of vector: ", length_vector ,"\n")
+
+# Finding the maximum value in a vector
+max_value <- max(numeric_vector)
+cat("max value of vector: ", max_value,"\n")
+
+# Calculating the sum of all elements in a vector
+sum_of_elements <- sum(numeric_vector)
+cat("fsum of elements: ", sum_of_elements,"\n")
+
+# Applying a function to each element of a vector
+sqrt_vector <- sqrt(numeric_vector)
+cat("sqrt of vector: ", sqrt_vector ,"\n")
+```
+### Vector Comparison
+```{r}
+# Comparing two vectors element-wise
+comparison_vector <- numeric_vector > integer_vector
+cat("comparison vector: ", comparison_vector ,"\n")
+# Checking if all elements of a vector are equal
+all_equal <- all(numeric_vector == integer_vector)
+cat("all equal: ", all_equal,"\n")
+# Checking if any element of a vector satisfies a condition
+any_satisfy <- any(numeric_vector > 3)
+cat("satisfy condition: ", any_satisfy ,"\n")
+```
+
+## List Operations
+
+### List Creation
+```{r}
+# Creating a list with named elements
+my_list <- list(a = 1, b = "hello", c = c(1.2, 2.3, 3.4))
+
+# Creating a list with unnamed elements
+my_list <- list(1, "hello", c(1.2, 2.3, 3.4))
+```
+
+### List Indexing
+```{r}
+# Accessing a list element using single brackets
+list_element <- my_list["a"]
+
+# Accessing a list element using double brackets
+list_element <- my_list[["a"]]
+```
+
+### List Manipulation
+```{r}
+# Adding an element to a list
+my_list$c <- 3.14
+
+# Removing an element from a list
+my_list$d <- NULL
+
+# Modifying an element in a list
+my_list$a <- 10
+```
+
+### List Functions
+```{r}
+# Checking the length of a list
+list_length <- length(my_list)
+
+# Checking the names of list elements
+list_names <- names(my_list)
+
+```
+
+### List Unlisting
+```{r}
+# Converting a list to a vector
+my_vector <- unlist(my_list)
+```
+
+### List iteration
+```{r}
+# Iterating over list elements with a for loop
+for (i in 1:length(my_list)) {
+  print(my_list[[i]])
+}
+
+# Iterating over list elements with lapply()
+lapply(my_list, function(x) print(x))
+```
+
+## Data Frame Operations
+
+### Creating a Data Frame
+```{r}
+# Creating a data frame
+df <- data.frame(
+  Name = c("John", "Jane", "Alice", "Bob"),
+  Age = c(25, 30, 22, 35),
+  Height = c(6.1, 5.5, 5.9, 5.7),
+  Married = c(FALSE, TRUE, FALSE, TRUE),
+  Weight = c(180, 150, 140, 160),
+  stringsAsFactors = FALSE
+)
+
+# Printing the entire data frame
+print(df)
+```
+
+### Accessing Column from DataFrame
+```{r}
+# Access the age column of the data frame
+df_age <- df$Age
+print(df_age)
+```
+
+### Getting Frequency of Categorical Variables in DataFrame
+```{r}
+# Use the table() function to get the frequency of each true and false
+marry_freq <- table(df$Married)
+
+# Print the frequency table
+print(marry_freq)
+```
+
+
+### Subsetting DataFrame
+```{r}
+# Subset data frame to get rows where Age is greater than 25
+df_subset <- df[df$Age > 25, ]
+print(df_subset)
+```
+
+### Adding New Columns
+```{r}
+# Add a new column "BMI" calculated from Height and Age
+df$BMI <- df$Weight / (df$Height^2)
+print(df)
+```
+
+### Changing Data Types
+```{r}
+# Convert Age column to a factor
+df$Age <- as.factor(df$Age)
+print(df)
+```
+
+### Sorting Data
+```{r}
+# Sort data frame by Age in ascending order
+df <- df[order(df$Age), ]
+print(df)
+```
+
+### Aggregating Data
+```{r}
+# Calculate mean Height and Age by Married status
+library(dplyr)
+df_summary <- df %>% 
+  group_by(Married) %>% 
+  summarize(mean_Height = mean(Height), mean_Age = mean(Age))
+print(df_summary)
+```
+
+
+# Matrices
+
+## Creating a Matrix
+```{r}
+# Creating a matrix
+mat <- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2, ncol = 3)
+print(mat)
+```
+
+## Matrix Arithmetic
+```{r}
+# Matrix addition
+mat1 <- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2, ncol = 3)
+mat2 <- matrix(c(6, 5, 4, 3, 2, 1), nrow = 2, ncol = 3)
+mat_sum <- mat1 + mat2
+print(mat_sum)
+
+# Matrix multiplication
+mat_prod <- mat1 %*% t(mat2)  # Note: %*% is used for matrix multiplication, t() is used for transposition
+print(mat_prod)
+```
+
+## Matrix Indexing
+```{r}
+# Accessing elements of a matrix
+element <- mat[1, 2]  # Access element in the first row and second column
+print(element)
+
+# Accessing rows and columns of a matrix
+row <- mat[1, ]  # Access the first row
+col <- mat[, 2]  # Access the second column
+print(row)
+print(col)
+```
+
+## Matrix Manipulation
+```{r}
+# Combining matrices
+mat1 <- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2, ncol = 3)
+mat2 <- matrix(c(6, 5, 4, 3, 2, 1), nrow = 2, ncol = 3)
+mat_combined <- cbind(mat1, mat2)  # Combine matrices by column
+print(mat_combined)
+
+# Extracting diagonal elements
+diag_elements <- diag(mat1)  # Extract diagonal elements of a matrix
+print(diag_elements)
+```
+
+# Reading in CSV type data
+### Using the Camera Data set
+
+```{r}
+# Read a CSV file with additional parameters
+cameraData <- read.csv("camera_dataset.csv", header = TRUE, sep = ",", encoding = "UTF-8", na.strings = "NA")
+
+head(cameraData)
+```
+
+# Data Exploration
+
+## Structure of Data
+We see that this data has 13 variables: Model, release date, max resolution, low resolution, effective pixels, zoom wide, zoom tele, normal focus, macro focus, storage included, weight, dimensions, and price
+```{r}
+str(cameraData)
+```
+
+## Summarize Data
+This displays the quartile data of all the columns of the Data frame
+```{r}
+summary(cameraData)
+```
+
+## Check first few rows of Data
+```{r}
+# Check the first few rows of the dataset
+head(cameraData)
+```
+
+## Check missing values
+we see some of the fields have missing values, its ultimate up to us how we want to handle missing data. We could remove the data, we could just leave it, we could set it to the mean. Generally if the data is big enough removing it is sufficient.
+```{r}
+sapply(cameraData, function(x) sum(is.na(x)))
+```
+
+## Remove missing values from dataframe
+There are several ways to use this
+```{r}
+camera_clean <- na.omit(cameraData)
+```
+## Renaming Data Frame Column Names
+```{r}
+# Assign new column names
+colnames(camera_clean) <- c('Model', 'ReleaseDate', 'MaxResolution', 'LowResolution', 'EffectivePixels', 'ZoomWide', 'ZoomTele', 'NormalFocusRange', 'MacroFocusRange', 'Storage', 'Weight','Dimensions', 'Price')
+
+head(camera_clean)
+```
+
+## Adding New Column to DataFrame
+```{r}
+library(tidyverse)
+
+# Extract the first word from the 'strings' column
+camera_clean <- camera_clean %>% mutate(Brand = str_extract(Model, "\\b\\w+"))
+
+# View the dataframe with the new 'first_word' column
+head(camera_clean)
+```
+
+
+# Useful Packages
+
+## GGPLOT2 for plotting
+### Importing GGPLOT2
+```{r}
+library(ggplot2)
+```
+### Scatter Plot
+```{r}
+ggplot(camera_clean, aes(x = EffectivePixels, y = Price)) +
+  geom_point() +
+  labs(x = "Effective Pixels", y = "Price") +
+  ggtitle("Price vs. Effective Pixels")
+```
+
+###  Bar Chart
+```{r}
+# Bar chart of number of cameras by brand
+ggplot(camera_clean, aes(x = ReleaseDate, fill = ReleaseDate)) +
+  geom_bar() +
+  labs(x = "Release Date", y = "Count") +
+  ggtitle("Number of Cameras Released Every Year") +
+  theme(legend.position = "none")
+```
+
+```{r}
+# Bar chart of number of cameras by brand
+ggplot(camera_clean, aes(x = Brand, fill = Brand)) +
+  geom_bar() +
+  labs(x = "Brand", y = "Count") +
+  ggtitle("Number of Cameras by Brand") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1), legend.position = "none")
+```
+
+### Line Plot
+```{r}
+ggplot(camera_clean, aes(x = ReleaseDate, y = Price, color = Brand)) +
+  geom_line(stat = "summary", fun = "mean") +
+  labs(x = "Year", y = "Average Price") +
+  ggtitle("Average Price of Cameras by Brand")
+```
+
+### BoxPlot
+```{r}
+# Box plot of price by Brand note this has a log applied to the y axis to change the appearance
+ggplot(camera_clean, aes(x = Brand, y = Price, fill = Brand)) +
+  geom_boxplot() +
+  labs(x = "Type", y = "Price") +
+  ggtitle("Price Distribution by Camera Type")+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  scale_y_continuous(trans = "log10")
+```
+### Line of Best Fit through scatter plot
+```{r}
+# Scatter plot with line of best fit
+ggplot(camera_clean, aes(x = MaxResolution, y = Price)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +  # Add line of best fit
+  labs(x = "Max Resolution", y = "Price") +
+  ggtitle("Scatter Plot of Price vs. Max Resolution with Line of Best Fit")+
+  scale_y_continuous(trans = "log10")
+```
+
+
+## DPLYR for data manipulation
+### Import DPLYR
+```{r}
+library(dplyr)
+```
+
+### Filter Data
+```{r}
+# Filter the data frame to include only rows where the Brand is "Canon"
+canon_cameras <- camera_clean %>% 
+  filter(Brand == "Canon") %>% 
+  select(Model, Price)
+
+# Display the filtered data frame
+head(canon_cameras) #canon_cameras is a new dataframe with only canon cameras and the price
+```
+### Grouping by specific column names and summarize
+```{r}
+# Group the data frame by Brand and calculate the average Price for each Brand
+brand_avg_price <- camera_clean %>% 
+  group_by(Brand) %>% 
+  summarize(AveragePrice = mean(Price, na.rm = TRUE))
+
+# Display the summarized data frame
+head(brand_avg_price) # brand_avg_price is a new data frame with the brands and the average price
+```
+
+### Sort and Arrange Data Frame
+```{r}
+# Sort the data frame by Price in descending order
+sorted_cameras <- camera_clean %>% 
+  arrange(desc(Price))
+
+# Display the sorted data frame
+head(sorted_cameras)
+```
+
+
+
+## TIDYR for cleaning or tidying data
+
+###Load TIDYR
+```{r}
+library(tidyr)
+```
+
+### Handle missing values
+```{r}
+missing_values <- cameraData %>% 
+  is.na() %>% 
+  colSums()
+
+# Display the columns with missing values and their corresponding counts
+missing_values
+
+# Remove rows with missing values in the Price column
+camera_df <- cameraData %>% 
+  drop_na(Storage.included)
+
+# Fill in missing values in the Megapixels column with the mean Megapixels value
+camera_df <- camera_df %>% 
+  fill(Weight..inc..batteries. , .direction = "down")
+
+# Display the updated data frame
+head(camera_df)
+```
+
+### Reshape Data
+```{r}
+# Convert the data frame from wide to long format
+camera_df_long <- camera_df %>% 
+  pivot_longer(cols = c(Effective.pixels, Price), 
+               names_to = "Variable", 
+               values_to = "Value")
+
+# Display the reshaped data frame
+head(camera_df_long)
+```
+
+### Clean Data
+```{r}
+# Replace "0" values in the Weight column with NA
+camera_df <- cameraData
+camera_df <- camera_df %>% 
+  mutate(Weight..inc..batteries. = ifelse(Weight..inc..batteries. == 0, NA, Weight..inc..batteries.))
+
+# Replace all spaces in the Model column with underscores
+camera_df <- camera_df %>% 
+  mutate(Model = gsub(" ", "_", Model))
+
+# Display the cleaned data frame
+head(camera_df)
+```
+
+### Convert Data from Long to Wide Format
+```{r}
+# Convert the data frame from long to wide format
+camera_df_wide <- camera_df_long %>% 
+  pivot_wider(names_from = "Variable", 
+              values_from = "Value")
+
+# Display the spread data frame
+camera_df_wide
+```
+#Simple Tests
+
+## Frequency of Variables
+```{r}
+# Create a vector of categorical videos
+videos <- c("Funny", "Music", "Sports", "News", "Funny", "Music", "Sports", "Music")
+
+# Use the table() function to get the frequency of each category
+video_freq <- table(videos)
+
+# Print the frequency table
+print(video_freq)
+```
+
+## Mean
+```{r}
+numbers <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+mean(numbers)
+```
+
+## Median
+```{r}
+median(numbers)
+```
+
+## Standard Deviation
+```{r}
+sd(numbers)
+```
+
+
+
+# Statistical Tests
+## One Sample T-Test
+```{r}
+# One-sample t-test to compare mean Price to a hypothesized value of $500
+t.test(camera_clean$Price, mu = 500)
+```
+## Paired Samples T-Test
+```{r}
+# Paired samples t-test to compare mean Low Resolution to Max Resolution
+t.test(camera_clean$LowResolution, camera_clean$MaxResolution, paired = TRUE)
+```
+
+
+## Two or Independent Sample T-Test
+Two-Sample T-Test: The t.test() function is used to compare the means of two groups. The result of the t-test provides a p-value, which is used to determine if there is statistically significant evidence to reject the null hypothesis that the means of the two groups are equal. A low p-value (typically less than 0.05) suggests that there is evidence to support the conclusion that the means of the two groups are different.
+```{r}
+# Two-sample t-test to compare Price between Brand A and Brand B
+t.test(Price ~ Brand, data = camera_clean, subset = Brand %in% c("Canon", "Sigma"))
+```
+## Chi Square Test
+Chi-Square Test: The chisq.test() function is used to test the independence between two categorical variables. The result of the chi-square test provides a p-value, which is used to determine if there is statistically significant evidence to reject the null hypothesis of independence between the two variables. A low p-value (typically less than 0.05) suggests that there is evidence to support the conclusion that the two categorical variables are associated or dependent.
+```{r}
+# Chi-square test for independence between Resolution and Brand
+chisq.test(camera_clean$MaxResolution, camera_clean$Brand)
+```
+
+## Correlation Test
+Correlation Test: The cor.test() function is used to test the association between two continuous variables. The result of the correlation test provides a correlation coefficient (typically Pearson's correlation coefficient), which indicates the strength and direction of the association between the two variables, as well as a p-value to determine if the association is statistically significant. A correlation coefficient close to 1 or -1 indicates a strong association, while a coefficient close to 0 indicates a weak or no association. A low p-value (typically less than 0.05) suggests that there is evidence to support the conclusion that the two continuous variables are correlated.
+```{r}
+# Correlation test between Price and Max Resolution
+cor.test(camera_clean$Price, camera_clean$MaxResolution)
+```
+
+## One Way ANOVA
+One-Way ANOVA: The aov() function is used to compare means across multiple groups. The result of the one-way ANOVA provides an F-statistic and a p-value, which are used to determine if there is statistically significant evidence to reject the null hypothesis that the means of all groups are equal. A high F-statistic and a low p-value (typically less than 0.05) suggest that there is evidence to support the conclusion that there are statistically significant differences among the means of the groups.
+```{r}
+# One-way ANOVA to compare Price across different Brand categories
+model <- aov(Price ~ Brand, data = camera_clean)
+summary(model)
+```
+
+# Regression Tests
+
+## Simple Linear Regression
+The output includes coefficients, standard errors, t-values, p-values, and goodness of fit statistics, which provide information about the estimated coefficients, significance of the coefficients, goodness of fit of the models, and statistical significance of the relationships between the independent and dependent variables.
+```{r}
+# Simple Linear Regression
+# Fit a simple linear regression model with Price as the dependent variable and MaxResolution as the independent variable
+simple_reg_model <- lm(Price ~ MaxResolution, data = camera_clean)
+
+# Print the summary of the simple linear regression model
+summary(simple_reg_model)
+```
+
+## Mutliple Linear Regression
+```{r}
+multiple_reg_model <- lm(Price ~ MaxResolution + Brand + ZoomWide, data = camera_clean)
+
+# Print the summary of the multiple linear regression model
+summary(multiple_reg_model)
+```
+
+## Poison Regression
+```{r}
+# Poisson Regression
+# Fit a Poisson regression model with Price as the dependent variable and EffectivePixels, ZoomWide, and Brand as independent variables
+poisson_model <- glm(Price ~ EffectivePixels + ZoomWide + Brand, data = camera_clean, family = poisson)
+
+# Print the summary of the Poisson regression model
+summary(poisson_model)
+```
+
+
+# Regression Example with Prediction
+
+## Split Data into Training and Testing
+We use the caret package for splitting into training and testing its easy
+```{r}
+camera_clean_example = subset(camera_clean, select = -c(Model)) #we remove the Model attribute here
+# Load the caret package
+library(caret)
+
+# Set the seed for reproducibility
+set.seed(123)
+
+# Split the data into training and testing sets
+train_indices <- createDataPartition(y = camera_clean_example$Price, p = 0.9, list = FALSE)
+trainCamera <- camera_clean_example[train_indices, ]
+testCamera <- camera_clean_example[-train_indices, ]
+```
+## Training the Model
+Lets see if we can predict the brand of the Price based on all the  of the camera except model
+```{r}
+# Simple Linear Regression Using the training data
+test_model <- lm(Price ~ Brand + ReleaseDate + MacroFocusRange , data = trainCamera) 
+
+# Print the summary of the simple linear regression model
+summary(test_model)
+```
+## Predicting Price
+```{r}
+# Perform prediction using the linear regression model on the test data
+predicted_prices <- predict(test_model, newdata = testCamera)
+# Store predicted prices in a named numeric vector
+predicted_prices <- as.vector(predicted_prices)
+sum(predicted_prices)
+```
+## Evaluating Accuracy
+```{r}
+# Calculate the accuracy of the predictions
+actual_prices <- testCamera$Price
+actual_prices <- as.vector(actual_prices)
+accuracy <- mean(abs(predicted_prices - actual_prices)/actual_prices)
+
+# Print the accuracy
+cat("Accuracy:", accuracy, "\n")
+```
+In short this model is terrible
